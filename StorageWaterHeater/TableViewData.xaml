@@ -1,0 +1,190 @@
+﻿<Window x:Name="winTableView"
+        x:Class="StorageWaterHeater.TableViewData"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StorageWaterHeater"
+        mc:Ignorable="d"
+        Title="TableViewData"
+        MinHeight="768"
+        MinWidth="1366"
+        FontSize="16"
+        WindowStartupLocation="CenterScreen"
+        Loaded="WinTableView_Loaded"
+        Closed="WinTableView_Closed"
+        WindowState="Maximized">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <!--<ColumnDefinition Width="*"/>-->
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
+
+        <Border Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="7"
+                Background="#34568B">
+            <TextBlock Margin="10"
+                       TextAlignment="Center"
+                       FontSize="36"
+                       FontWeight="Bold"
+                       Foreground="White">
+                TableView
+            </TextBlock>
+        </Border>
+
+        <DataGrid x:Name="dgTableView" Background="WhiteSmoke"
+                  ColumnWidth="Auto"
+                  Grid.Row="1"
+                  Grid.RowSpan="2"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="6"
+                  Margin="10"
+                  AutoGenerateColumns="True"
+                  CanUserSortColumns="False"
+                  HorizontalContentAlignment="Center">
+
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                <Setter Property="FontWeight" Value="Bold" />
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+
+            <!--<DataGrid>
+                <DataGrid.CellStyle>
+                    <Style TargetType="{x:Type DataGridCell}">
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    </Style>
+                </DataGrid.CellStyle>
+            </DataGrid>-->
+
+
+        </DataGrid>
+
+        <Grid Grid.Row="1"
+              Grid.Column="6"
+              Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+
+            <Border Grid.Row="0">
+                <Label x:Name="lblSearchTestID"
+                       FontSize="16"
+                       FontWeight="Bold"
+                       Padding="0"
+                       Margin="5 10 5 0"
+                       VerticalContentAlignment="Bottom"
+                   Content="Search TestID"/>
+            </Border>
+
+            <TextBox x:Name="txtbxSearchTestID" Grid.Row="1"
+                       Text=""
+                       FontSize="16"
+                       FontWeight="Bold"
+                       Margin="5 0 5 0" 
+                       VerticalAlignment="Center" Background="LightGoldenrodYellow" TextChanged="TxtbxSearchTestID_TextChanged"></TextBox>
+            
+            <TextBlock Grid.Row="2"
+                       Text="Select TestID"
+                       FontSize="16"
+                       FontWeight="Bold"
+                       Margin="5 5 5 0" VerticalAlignment="Bottom"></TextBlock>
+
+            <!--SelectionChanged="lstTestIDs_SelectionChanged"-->
+            
+            <ListBox x:Name="lstTestIDs"
+                     Margin="5,0,5,10"
+                     Grid.Row="3"
+                     Grid.RowSpan="6"
+                     
+                     MouseDoubleClick="LstTestIDs_MouseDoubleClick"
+                     SelectedIndex="0">
+                <!--<ListBoxItem Content="ListBox Item 1"/>
+                <ListBoxItem Content="ListBox Item 2"/>
+                <ListBoxItem Content="ListBox Item 3"/>-->
+            </ListBox>
+
+            <TextBox Margin="5"
+                     x:Name="txtbxNumberOfRecords"
+                     Grid.Row="9"
+                     Background="LightGoldenrodYellow"
+                     BorderBrush="Black"
+                     Text="1000"
+                     TextAlignment="Center"
+                     VerticalContentAlignment="Center"
+                     TextChanged="TxtbxNumberOfRecords_TextChanged"
+                     PreviewTextInput="TxtbxNumberOfRecords_PreviewTextInput" />
+
+            <Button Margin="5"
+                    x:Name="btnExportToExcel"
+                    Grid.Row="10">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="💾   " />
+                    <TextBlock Text="Export to Excel" />
+                </StackPanel>
+            </Button>
+
+            <ToggleButton Margin="5"
+                          x:Name="tglbtnIncludeZero"
+                          Grid.Row="11"
+                          Checked="TglbtnIncludeZero_Checked"
+                          Unchecked="TglbtnIncludeZero_Unchecked">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="0️⃣   " />
+                    <TextBlock Text="Zero Included" />
+                </StackPanel>
+            </ToggleButton>
+
+            <ToggleButton Margin="5"
+                          x:Name="tglbtnOrder"
+                          Grid.Row="12"
+                          Unchecked="TglbtnOrder_Unchecked"
+                          Checked="TglbtnOrder_Checked">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="🔼   " />
+                    <TextBlock Text="Ascending Order" />
+                </StackPanel>
+            </ToggleButton>
+
+            <Button Margin="5"
+                    x:Name="btnExit"
+                    Grid.Row="13"
+                    Click="BtnExit_Click"
+                    Foreground="Red">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="🛑   " />
+                    <TextBlock Text="Exit" />
+                </StackPanel>
+            </Button>
+        </Grid>
+
+    </Grid>
+</Window>

@@ -1,0 +1,113 @@
+﻿<Window x:Name="winStandingLossReport" x:Class="StorageWaterHeater.StandingLossReport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StorageWaterHeater"
+        mc:Ignorable="d"
+        Title="Standing Loss Report" 
+        MinHeight="768" MinWidth="1366" WindowStartupLocation="CenterScreen" 
+        Closed="WinStandingLossReport_Closed" Loaded="WinStandingLossReport_Loaded" FontSize="18" WindowState="Maximized">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" Background="#34568B">
+            <TextBlock Margin="10" TextAlignment="Center" FontSize="36" FontWeight="Bold" Foreground="White">
+                Standing Loss Report
+            </TextBlock>
+        </Border>
+
+        <Image Grid.Row="0" Grid.Column="0" Source="/images/butterfly.png" Stretch="UniformToFill" StretchDirection="Both" HorizontalAlignment="Left" VerticalAlignment="Center" MaxWidth="50" MaxHeight="50"/>
+
+        <DataGrid x:Name="dgStandingLossReport" 
+                  Grid.Row="1" 
+                  Grid.Column="0"
+                  Grid.RowSpan="2" 
+                  Grid.ColumnSpan="6" 
+                  Margin="10"
+                  Background="AliceBlue"
+                  ColumnWidth="Auto"
+                  AutoGenerateColumns="True"
+                  CanUserSortColumns="False"
+                  HorizontalContentAlignment="Center">
+
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="FontWeight" Value="Bold" />
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+
+
+            <!--<DataGrid>
+                <DataGrid.CellStyle>
+                    <Style TargetType="{x:Type DataGridCell}">
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    </Style>
+                </DataGrid.CellStyle>
+            </DataGrid>-->
+
+
+        </DataGrid>
+
+        <Grid Grid.Row="1" Grid.Column="7" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="Search TestID" FontSize="16" FontWeight="Bold" Margin="5 0 5 0" VerticalAlignment="Top"></TextBlock>
+
+            <TextBox x:Name="txtbxSearchTestID" Grid.Row="1" Text="" FontSize="16" FontWeight="Bold" Margin="5 0 5 0" VerticalAlignment="Top" TextChanged="TxtbxSearchTestID_TextChanged"></TextBox>
+
+            <TextBlock Grid.Row="2" Text="Select TestID" FontSize="16" FontWeight="Bold" Margin="5 0 5 0" VerticalAlignment="Top"></TextBlock>
+
+            <!--SelectionChanged="lstTestIDs_SelectionChanged"-->
+
+            <ListBox Grid.Row="3" 
+                     Grid.RowSpan="6" 
+                     x:Name="lstTestIDs" 
+                     Margin="5,0,5,0" 
+                     
+                     MouseDoubleClick="LstTestIDs_MouseDoubleClick" SelectionChanged="LstTestIDs_SelectionChanged">
+            </ListBox>
+
+            <TextBox Grid.Row="9" x:Name="txtbxNumberOfRecords" Margin="5" Background="LightGoldenrodYellow" BorderBrush="Black" Text="1000" TextAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="TxtbxNumberOfRecords_PreviewTextInput"/>
+
+            <Button Grid.Row="10" x:Name="btnExportToExcel" Margin="5" Content="Export to Excel" Click="BtnExportToExcel_Click"/>
+
+            <ToggleButton Grid.Row="11" x:Name="tglbtnIncludeZero" Margin="5" Content="Zero Excluded" Checked="TglbtnIncludeZero_Checked" Unchecked="TglbtnIncludeZero_Unchecked"/>
+
+            <ToggleButton Grid.Row="12" x:Name="tglbtnOrder" Margin="5" Content="Descending Order" Unchecked="TglbtnOrder_Unchecked" Checked="TglbtnOrder_Checked"/>
+
+            <Button Grid.Row="13" x:Name="btnExit" Margin="5 5 5 10" Content="Exit" Click="BtnExit_Click"/>
+        </Grid>
+    </Grid>
+</Window>

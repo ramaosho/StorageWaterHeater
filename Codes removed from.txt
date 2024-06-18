@@ -1,0 +1,47 @@
+            <!--<DataGrid HorizontalContentAlignment="Center" ColumnWidth="*" x:Name="dgLiveData" RowBackground="Gold" AlternatingRowBackground="LightGoldenrodYellow" FontSize="36">
+                <DataGrid.Columns>
+                    <DataGridHyperlinkColumn Header="Mongo"/>
+                    <DataGridTextColumn Header = "Name"/>
+                    <DataGridTextColumn Header = "Title"/>
+                    <DataGridCheckBoxColumn Header = "ReElected?"/>
+                    <DataGridComboBoxColumn Header = "Party"/>
+                </DataGrid.Columns>
+            </DataGrid>-->
+
+
+
+
+        <Grid Grid.Row="2" Grid.Column="1" Grid.RowSpan="9" Margin="5" Background="#0072B5">
+            <Grid.RowDefinitions>
+                <!--Total Number of Rows = 14 -->
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Content="WaterTemp"/>
+            <Label Grid.Row="1" Content="InletTemp"/>
+            <Label Grid.Row="2" Content="OutletTemp"/>
+            <Label Grid.Row="3" Content="BodyTemp"/>
+            <Label Grid.Row="4" Content="Ambient"/>
+            <Label Grid.Row="5" Content="FlowRateSV"/>
+            <Label Grid.Row="6" Content="FlowRatePV"/>
+            <Label Grid.Row="7" Content="FlowTotalizer"/>
+            <Label Grid.Row="8" Content="Voltage"/>
+            <Label Grid.Row="9" Content="Current"/>
+            <Label Grid.Row="10" Content="Frequency"/>
+            <Label Grid.Row="11" Content="PF"/>
+            <Label Grid.Row="12" Content="Power"/>
+            <Label Grid.Row="13" Content="EnergyWh"/>
+        </Grid>

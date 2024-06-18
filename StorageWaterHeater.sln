@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageWaterHeater", "StorageWaterHeater\StorageWaterHeater.csproj", "{11763E0C-A41C-42BD-AD89-D3A4451482A8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11763E0C-A41C-42BD-AD89-D3A4451482A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11763E0C-A41C-42BD-AD89-D3A4451482A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11763E0C-A41C-42BD-AD89-D3A4451482A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11763E0C-A41C-42BD-AD89-D3A4451482A8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78183FA0-F492-43AB-ADF1-4199DB101DDA}
+	EndGlobalSection
+EndGlobal
